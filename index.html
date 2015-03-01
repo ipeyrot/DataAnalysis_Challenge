@@ -1,0 +1,36 @@
+<HTML>
+<HEAD>
+<TITLE>top 10 arrival airports in the world in 2013</TITLE>
+        <script type="text/javascript" src="data.json"></script>
+        <script type="text/javascript">
+		function load(v) {
+		
+			var errorMsg = "Please enter a valid parameter."
+		
+			if (v < 1){
+				alert(errorMsg)
+				return false
+			}
+			if (v > 10){
+				alert(errorMsg)
+				return false
+			}
+		   var mydata = JSON.parse(data);
+		   for(var i=0;i<v;i++){
+		      var j = i+1;
+			  alert('TOP ' + j + ' is ' + mydata[i].airport + ' WITH ' + mydata[i].pax + ' NB OF PAX IN 2013');}
+		   return true
+		}
+		</script>
+<BODY>
+<FORM ACTION="" NAME="simpleForm" onSubmit="return load(this.sNumber.value)">
+	<H2>top 10 arrival airports in the world in 2013</H2>
+	<P>Enter your parameter between 1 and 10:
+	<INPUT TYPE="TEXT" VALUE="5" NAME="sNumber"><BR>
+	<INPUT TYPE="SUBMIT">
+	<INPUT TYPE="RESET"></P>
+</FORM>
+</BODY>
+</HTML>
+
+
